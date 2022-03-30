@@ -129,7 +129,7 @@ static void toggle_light() {
 static void set_light(bool *power) {
   // set light to opposite of power and update power accordingly
   *power = !*power;
-  err = setPower(bulbs[bulb_index], *power, 500);
+  int err = setPower(bulbs[bulb_index], *power, 500);
   if (err != 0) {
     ESP_LOGE(TAG, "setPower error: %d", err);
     return;
